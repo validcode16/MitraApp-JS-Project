@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Json Starage and Date  </title>
+</head>
+<body>
+  <h2>Json Data Example</h2>
+
+  <!-- Json  -->
+<script>
+
+//  Json data convert to string and sring t convert object
+  // let product = {
+  //     company: 'Mango',
+  //     price: 861,
+  //     item_name: 'T-Shert',
+  //     size: 's',
+  //     rating: {
+  //       stars : 4.5,
+  //       noOfReviews: 453,
+  //     },
+  //   }
+  //   console.log(product);
+  //   console.log(typeof product);
+  //   let str = JSON.stringify(product);
+  //   console.log(str);
+  //   console.log(typeof str);
+
+  //   let newProduct = JSON.parse(str);
+    
+  //   console.log(newProduct);
+  //   console.log(typeof newProduct);
+   
+  let product = {
+      company: 'Mango',
+      price: 861,
+      item_name: 'T-Shert',
+      size: 's',
+      rating: {
+        stars : 4.5,
+        noOfReviews: 453,
+      },
+    }
+
+    //  store localstoarge and fecth value from localstorage using setItem And GetItem
+
+      // localStorage.setItem('Name', 'KG Coding');
+      // localStorage.setItem('Price', '86457');
+      // console.log(localStorage.getItem('Name'));
+
+    // localStorage.setItem('product', JSON.stringify(product));
+    // console.log(localStorage.getItem('product'));
+    // localStorage.removeItem('Price');
+    // console.log(localStorage.getItem('Price'));
+    localStorage.clear();
+
+
+
+</script>
+</body>
+</html>

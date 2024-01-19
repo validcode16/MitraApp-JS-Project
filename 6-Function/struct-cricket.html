@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Game</title>
+</head>
+<body>
+  <h2>Bat Ball Stump Game</h2>
+
+  <button onclick="computerChoice = generateComputerChoice();
+    resultMsg = getResult('Bat', computerChoice);
+    showResult('Bat', computerChoice, resultMsg);
+
+  " class="bat">Bat</button>
+  <button onclick="computerChoice = generateComputerChoice();
+    resultMsg = getResult('Ball', computerChoice);
+    showResult('Ball', computerChoice, resultMsg);
+  " class="Ball">Ball</button>
+  <button onclick="
+   computerChoice = generateComputerChoice();
+   resultMsg = getResult('Stump', computerChoice);
+   showResult('Stump', computerChoice, resultMsg);
+  " class="Stump">Stump</button>
+
+  <script>
+
+    let score = {
+      win : 0,
+      lost: 0,
+      tie: 0,
+      displayScore: function(){
+       return `No. of matches  Won: ${score.win}, Lost: ${score.lost}, Tie: ${score.tie}`;
+      }
+    }
+    
+    let randomNumber;
+
+    function generateComputerChoice() {      
+      randomNumber = Math.random() * 3;
+      if(randomNumber > 0 && randomNumber <= 1){
+        return 'Bat';
+      }else if(randomNumber > 1 && randomNumber <= 2){
+        return 'Ball';
+      } else {
+        return 'Stump';
+      }
+    }
+
+
+    function getResult(userMove, compuMove){
+      if(userMove === 'Bat'){
+        if(compuMove === 'Ball'){
+          score.win++;
+          return 'user Won';
+        }else if (compuMove === 'Bat'){
+          score.tie++;
+          return 'It is a Tie';
+        }else if (compuMove === 'Stump'){
+          score.lost++;
+          return 'Computer has Won';
+        }
+        } else if (userMove === 'Ball') {
+        if(compuMove === 'Ball'){
+          score.tie++;
+          return 'It is a Tie';
+        }else if (compuMove === 'Bat'){
+          score.lost++;
+          return 'Computer has Won';
+        }else if (compuMove === 'Stump'){
+          score.win++;
+          return 'User Won';
+        } 
+        }else {
+          if (userMove === 'Stump'){ 
+            if(compuMove === 'Ball'){
+              score.lost++;
+              return 'Computer has Won';
+            }else if (compuMove === 'Bat'){
+              score.win++;
+              return 'User Won';
+            }else if (compuMove === 'Stump'){
+              score.tie++;
+              return 'It is a Tie';
+            }
+
+          }
+        }
+      }
+   
+    function showResult(userMove, compuMove, result){
+      console.log(score);
+      alert(`You have chosen ${userMove}. Computer choice is ${compuMove} 
+      
+      ${result}
+      
+      ${score.displayScore()}
+      
+      `);
+     }
+
+  </script>
+</body>
+</html>

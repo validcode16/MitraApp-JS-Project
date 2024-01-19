@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Wish List</title>
+</head>
+<body>
+  <h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+<p id="name-display"></p>
+
+
+<script>
+  const myName = 'Prashant';
+  const GSTpercent = 18;
+  document.querySelector('#name-display').innerText = myName;
+  let cartValue = Math.round(((15599 - (10/100 * 15599)) - 272 + (2499 - (41/100*2499)) - 29 + 25 + 20) * (100 + GSTpercent) / 100 );
+  console.log(cartValue);
+</script>
+</body>
+</html>

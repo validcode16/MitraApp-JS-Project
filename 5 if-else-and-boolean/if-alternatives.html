@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>If alternatives</title>
+</head>
+<body>
+  <h2>If alternatives</h2>
+  <p id="result"></p>
+  <script>
+
+console.log("ternary operators");
+   let age = 12;
+//  ternary operators
+   let result = age > 18 ? 'Adult' : 'Kid';
+   console.log(result);
+
+  //  Guard operator
+  console.log("Guard operator");
+  let usrAge = 0;
+  let finalAge = usrAge || 18;
+  console.log(usrAge);
+  console.log(finalAge);
+
+  //  Default operator
+  console.log(" Default operator");
+  let usrAge1 = 21;
+  let finalAge1 = usrAge ?? 18;
+  console.log(usrAge1);
+  console.log(finalAge1);
+  </script>
+</body>
+</html>
